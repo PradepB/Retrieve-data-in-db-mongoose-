@@ -1,0 +1,16 @@
+TechnicianPhoto
+TechnicianName
+TechnicianEmpCode
+CourseStatus
+EmployeeLevel
+AadharCardNo
+DateOfBirth
+PhoneNumber
+EmailAddress
+Address
+TechnicianEmpCode
+Experience
+Designation
+DateOfJoining
+TechinicianPhoto
+

@@ -1,0 +1,289 @@
+<html ng-app="dealerData">
+    <head >
+        <title>AddTechni</title>
+            <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="js/assets/css/style.css">
+
+
+    <link rel="stylesheet" href="js/assets/css/bootstrap.css">
+
+    <link rel="stylesheet" href="js/assets/css/magnific-popup.min.css">
+    
+  <script src="js/assets/js/angular.js"></script>
+  <script src="js/assets/js/angular-route.js"></script>
+<script src="js/services/dealer.js"></script>
+    <script src="js/controller/mainctrl.js"></script>
+    <script src="js/cont.js"></script>
+    </head>
+    <body>
+      <div ng-controller="dealerdataCtrl">
+
+     <div ng-repeat="dealerdata  in usersDatas ">
+         <div class="top-header">
+    <div class="container">
+ 
+  <div class="row">
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xm-6">
+        <img class="pull-left" src="js/assets/images/logo.png" alt="#" width="128px"/>
+        </div>
+  <div class="col-lg-4 col-md-4 col-sm-4 col-xm-4">
+  <h5 class="pull-right" id="lblWelcomeUser">{{dealerdata.LoginUserName}}</h5>
+   </div>
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xm-2">
+  <a href="#" class="pull-right" id="logout">Logout</a>
+  </div>
+    </div>
+    </div>
+  </div>
+   <!--  top-header end -->
+
+    <!--  header end -->
+    <div class="header">
+  <div class="container">
+    <div class="row">
+  <div class="col-lg-10 col-md-10 col-sm-10 col-xm-10">
+    <h3>eBasic</h3>
+      </div>
+
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xm-2">
+  <h6 style="color: white;" id="report">REPORT</h6>
+  </div>
+  </div>
+  </div>
+  </div>
+     <!--  header end -->  
+     
+          <!-- dealer code started -->
+<div class="container">
+  <div class="row">
+    <div class="dealer">
+  <div class=" col-md-4">
+  <h3>{{dealerdata.FirstName +" "+dealerdata.LastName}}</h3>
+    </div>
+  <div class="col-md-2 ">
+  <h4>Dealer code<br> {{dealerdata.DealerCode}}</h4>
+  </div>
+  <div class=" col-md-2 ">
+  <h4 class="pull-right"> Town <br>{{dealerdata.Town}}</h4>
+  </div>
+  <div class=" col-md-2">
+  <h4 class="pull-right">Territory<br> {{dealerdata.Territory}}</h4>
+  </div>
+  <div class="col-md-2">
+  <h4 class="pull-right">Area <br>{{dealerdata.Area}}</h4>
+  </div>
+  </div>
+  </div>
+  </div>
+     </div>
+     
+      </div>
+   <!-- dealer code end -->
+       <!-- duration started -->
+
+
+       <div class="container">
+         <div class="row duration">
+<div class="col-lg-4 col-md-4 col-sm-4 col-xm-4">
+    <h4>EBASIC</h4>
+  </div>
+<div class="col-lg-2 col-md-2 col-sm-2 col-xm-2">
+    <h4>Not started</h4>
+  </div>
+<div class="col-lg-2 col-md-2 col-sm-2 col-xm-2">
+    <h4>Inprogress</h4>
+  </div>
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xm-2">
+        <h4>Completed</h4>
+  </div>
+</div>
+  <div class="row duration-days">
+  <div class="col-lg-4 col-md-4 col-sm-4 col-xm-4">
+       <h4>Duration</h4>
+      <h4>20 DAYS</h4>
+      <label for="lblAddTechnicianInfo">Add technicians to take course</label>
+    </div>
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xm-2">
+
+	<span class="chart" data-percent="86">
+		<span class="percent"></span>
+	</span>
+    </div>
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xm-2">
+
+	<span class="chart" data-percent="86">
+		<span class="percent"></span>
+	</span>
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xm-2">
+
+	<span class="chart" data-percent="86">
+		<span class="percent"></span>
+	</span>
+    </div>
+  </div>
+     <!--<div ng-view=""></div>
+ -->
+    
+
+
+  <div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xm-4"></div>
+       <div class="col-lg-4 col-md-4 col-sm-4 col-xm-4">
+           <div id="over">
+          
+
+    <img src="js/assets/images/people.png" alt="#" style="margin-top: 50px;"/>
+    <h5 style="text-align: center">ADD TECHNICIAN</h5>
+    <a  href="#test-form" class="popup-with-form"><img src="js/assets/images/icon.png" alt="#" style="width: 37px;" /></a>
+    </div>
+
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-4 col-xm-4"></div>
+  </div>
+  </div>
+
+<!-- form itself -->
+
+
+
+
+
+
+
+<form id="test-form" class="width-800 white-popup-block mfp-hide">
+  <div ng-controller="techniCtrl">
+	<div class="add-tech-form" style="background: #4d79e4;color: white;">
+      <div class="row">
+        <div class="col-md-12 col-md-offset-0 col-sm-12 col-xm-12">
+          <h3>Technician</h3>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-md-12 col-md-offset-0 col-sm-12 col-xm-12" style="border-bottom: 2px solid #8bbeea;margin-top: 8px;">
+        <div class="col-md-4 col-sm-4 col-xm-4" style="margin-bottom: 11px;">
+          <label for="txtAadharNumber">Aadharcard number:</label>
+         <input type="text" pattern="[0-9]"  class="form-control" id="txtAadharNumber" ng-model="technicians.AadharCardNo" maxlength="12">
+        </div>
+        <div class="col-md-2  col-sm-2 col-xm-2" style="margin-top: 24px;">
+           <a class="popup-with-form btn btn-default" href="#test-form-2">AUTHENTICATE</a>
+        </div>
+      </div>
+  </div>
+  <div class="row" style="border-bottom: 3px solid #5da5ec;">
+      <div class="col-md-8 col-sm-8 col-xm-8">
+    <div class="col-md-12 col-sm-12 col-xm-12">
+      <label for="txtTechnicianName">Technician Name</label>
+     <input type="text" class="form-control" id="txtTechnicianName" ng-model="technicians.TechnicianName"maxlength="50">
+    </div>
+    <div class="col-md-12 col-sm-12 col-xm-12">
+      <div class="pl0 col-md-6 col-sm-6 col-xm-6">
+        <label for="txtDateOfBirth" >Date of birth</label>
+  <input type="date" class="form-control" id="txtDateOfJoining" ng-model="technicians.DateOfBirth">
+      </div>
+      <div class="pr0 col-md-6 col-sm-6 col-xm-6">
+        <label for="txtPhoneNumber">Phone Number</label>
+  <input type="tel" class="form-control" id="txtPhoneNumber" ng-model="technicians.PhoneNumber"> 
+      </div>
+    </div>
+    <div class="col-md-12 col-sm-12 col-xm-12">
+      <label for="txtEmailAddress">Email Address</label>
+     <input type="email" class="form-control" id="txtEmailAddress" ng-model="technicians.EmailAddress" maxlength="50" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+    </div>
+    <div class="col-md-12 col-sm-12 col-xm-12">
+      <label for="txtAddress">Address:</label>
+     <input type="text" class="form-control" id="txtAddress" ng-model="technicians.Address" maxlength="200">
+    </div>
+</div>
+    <div class="col-md-4 col-sm-4 col-xm-4" >
+      <label for="imgTechnicianPhoto">Upload File</label>
+     <input type="file" id="imgTechnicianPhoto" ng-model="technicians.TechinicianPhoto"> 
+      <!--<img src="assets/images/people.png" alt="#" style="border-radius: 50%;width: 200px;">
+      <h4 style="margin: 13px 26px;">ADD TECHNICIAN</h4>-->
+    </div>
+
+  </div>
+  <div class="row" style="margin-top: 18px;">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xm-12">
+        <div class="col-lg-2 col-md-2 col-sm-6 col-xm-12">
+            <label for="txtTechnicianEmpCode">Emp code</label>
+         <input type="text" class="form-control" id="txtTechnicianEmpCode" ng-model="technicians.TechnicianEmpCode">
+       </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xm-2">
+           <label for="lblCertification">Emp Level</label>
+        <input type="text" class="form-control" id="lblCertification" ng-model="technicians.EmployeeLevel">
+      </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xm-2">
+          <label for="txtExperience">Experience</label>
+       <input type="text" class="form-control" id="txtExperience" ng-model="technicians.Experience">
+     </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xm-2">
+         <label for="txtDesignation">Designation</label>
+      <input type="text" class="form-control" id="txtDesignation" ng-model="technicians.Designation">
+    </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xm-3">
+        <label for="txtDateOfJoining">Date of Joining</label>
+     <input type="date" class="form-control" id="txtDateOfJoining" ng-model="technicians.DateOfJoining">
+   </div>
+    </div>
+
+
+  </div>
+  <div class="row">
+    <div class="form-submit-block col-md-12 col-sm-12 col-xm-12" >
+       <button type="submit" id="btnAuthenticate" ng-click="techniAdd()" class="btn btn-success">ADD TECHNICIANS</button>
+    </div>
+  </div>
+</div>
+</form>
+
+<form id="test-form-2" class="width-500 white-popup-block mfp-hide">
+
+      <h3 style="background: #7f93ff;
+    margin: 0px auto;
+    padding: 14px 17px;
+    text-align: left;
+    color: #f4f9f9;">Technician</h3>
+
+
+<div class="popup-thumb-auth"  style="color: white; text-align:center;background: #0081ff;">
+<h4 class="text-center">Please place your RIGHT THUMB on Finger print scanner</h4>
+<img class="img-responsive" src="js/assets/images/thumbnail.png" />
+<button class="btn btn-info" id="scan">SCAN</button>
+</div>
+</form>
+
+   <!-- duration end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="js/assets/js/jquery-3.1.1.min.js"></script>
+<script src="js/assets/js/bootstrap.js"></script>
+<script src="js/assets/js/jquery.magnific-popup.min.js"></script>
+<script src="js/assets/js/easypiechart.min.js"></script>
+<script src="js/assets/js/popup.js"></script>
+<script src="js/assets/js/custom.js"></script>
+
+
+
+    </body>
+
+
+
+</html>
